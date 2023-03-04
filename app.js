@@ -1,10 +1,9 @@
-console.log("Welcome to Tic Tac Toe")
- var turn=""
+var turn=""
  
 var gameover = false;
 
 //Function to change the turn
-const changeTurn = ()=>
+function changeTurn  ()
 {
         btn1.addEventListener('click',()=>
     {
@@ -61,6 +60,7 @@ Array.from(boxes).forEach(element => {
             boxtext.innerText = turn;
             turn = changeTurn();
             checkWin();
+            
            
         }
 

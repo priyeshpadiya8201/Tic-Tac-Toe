@@ -1,27 +1,24 @@
-var turn=""
- 
+var turn="";
 var gameover = false;
+btn1.addEventListener('click',()=>
+{
+    turn='X';
+    if(!gameover)
+    document.getElementsByClassName("info")[0].innerText = "Turn for "+ turn;
 
+});
+    btn2.addEventListener('click',()=>
+{    
+    turn='O';
+    if(!gameover)
+    document.getElementsByClassName("info")[0].innerText = "Turn for "+ turn;
+}); 
+ 
 //Function to change the turn
 function changeTurn  ()
 {
-        btn1.addEventListener('click',()=>
-    {
-        turn='X';
-        if(!gameover)
-        
-    document.getElementsByClassName("info")[0].innerText = "Turn for "+ turn;
+    return turn ==="X"?"O":"X";
     
-    });
-        btn2.addEventListener('click',()=>
-    {    
-        turn='O';
-        if(!gameover)
-    document.getElementsByClassName("info")[0].innerText = "Turn for "+ turn;
-    
-    }); 
-    
-    return turn;
 }
 
 const checkWin = () => {
@@ -59,6 +56,8 @@ Array.from(boxes).forEach(element => {
         if (boxtext.innerText === '') {
             boxtext.innerText = turn;
             turn = changeTurn();
+            if(!gameover)
+            document.getElementsByClassName("info")[0].innerText = "Turn for "+ turn;
             checkWin();
             
            
